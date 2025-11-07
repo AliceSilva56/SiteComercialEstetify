@@ -1,0 +1,167 @@
+/* Estilos para o carrossel */
+.carrossel-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Altura fixa para melhor controle */
+  overflow: hidden;
+  border-radius: 12px;
+  
+}
+
+.carrossel-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrossel-imagem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 12px;
+}
+
+/* Ajustes para o layout do slide 2 */
+.slide-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.slide-text {
+  flex: 1;
+  max-width: 45%;
+}
+
+.slide-image {
+  flex: 1;
+  max-width: 55%;
+}
+
+.carrossel-imagem.ativo {
+  opacity: 1;
+}
+
+.carrossel-botao {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: #333;
+  padding: 8px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+}
+
+.carrossel-botao:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+#contador-slide {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.carrossel-controles {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos para a seção de colaboradores */
+.colaboradores {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.colaboradores h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.grid-colaboradores {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.colaborador {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.colaborador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.foto-colaborador {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid #f0f0f0;
+}
+
+.colaborador h4 {
+  margin: 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.contatos-colaborador {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contatos-colaborador a {
+  color: #6c5ce7;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.contatos-colaborador a:hover {
+  color: #4a3dc0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-colaboradores {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-colaboradores {
+    grid-template-columns: 1fr;
+  }
+  
+  .colaborador {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
